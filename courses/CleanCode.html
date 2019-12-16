@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Clean code</section>
+				<section>Origines</section>
+				<section>Nommage
+					<section>Réveler l'intention</section>
+					<section>Pas de désinformation</section>
+					<section>Faire des distinctions</section>
+					<section>Abbréviations</section>
+					<section>Encodages</section>
+					<section>Correspondances</section>
+					<section>Nom de classes</section>
+					<section>Nom de méthodes</section>
+					<section>Un mot par concept</section>
+					<section>Pas de blague</section>
+					<section>Utiliser le contexte</section>
+					<section>Langage ubiquitaire</section>
+				</section>
+				<section>Fonctions
+					<section>Taille</section>
+					<section>Une seule chose</section>
+					<section>Un seul niveau d'abstraction</section>
+					<section>Instruction switch</section>
+					<section>Paramètres</section>
+					<section>Effets de bord</section>
+					<section>Nom de classes</section>
+					<section>Nom de méthodes</section>
+					<section>Un mot par concept</section>
+					<section>Pas de blague</section>
+					<section>Utiliser le contexte</section>
+					<section>Langage ubiquitaire</section>
+				</section>
+				<section>Classes
+					<section>Encapsulation</section>
+					<section>Taille</section>
+					<section>Responsabilité</section>
+					<section>Couplage</section>
+					<section>Cohésion</section>
+				</section>
+				<section>Commentaires
+					<section>Code s'expliquant lui-même</section>
+					<section>Bons commentaires</section>
+					<section>Mauvais commentaires</section>
+					<section>Les commentaires sont des désodorisants !</section>
+				</section>
+				<section>Formattage</section>
+				<section>Gestion des erreurs</section>
+				<section>4 règles du design simple
+					<section>Tous les tests passent</section>
+					<section>Pas de duplication (DRY)</section>
+					<section>Exprime l'intention</section>
+					<section>Concis (over-engineering, KISS, YAGNI)</section>
+				</section>
+				<section>SOLID
+					<section>Single Responsibility Principle</section>
+					<section>Open Closed Principle</section>
+					<section>Liskov Substitution Principle</section>
+					<section>Interface Segregation Principle</section>
+					<section>Dependency Inversion Principle</section>
+				</section>
+				<section>Loi de Demeter</section>
+			</div>
+		</div>
+
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Refactoring</section>
+				<section>Définition</section>
+				<section>Règles
+					<section>Le code est plus propre</section>
+					<section>Aucune fonctionnalité n'est modifiée/introduite</section>
+					<section>Pas de refactoring sans tests automatiques</section>
+					<section>Les tests passent toujours à la fin</section>
+				</section>
+				<section>Origines</section>
+				<section>Code sale
+					<section>Dette technique ?</section>
+					<section>Causes</section>
+					<section>Pression</section>
+					<section>Dette difficilement remboursable</section>
+					<section>Code trop couplé</section>
+					<section>Manque de tests</section>
+					<section>Problème de communication dans l'équipe (+ accord sur comment bien coder)</section>
+					<section>Intégration tardive</section>
+					<section>Incompétence</section>
+					<section>La fenêtre cassée</section>
+					<section>Complexité cyclomatique</section>
+				</section>
+				<section>Quand l'utiliser?</section>
+				<section>La règle du boy scout</section>
+				<section>Code smells - Bloaters
+					<section>Méthode longue</section>
+					<section>Longue classe</section>
+					<section>Primitive obsession</section>
+					<section>Longue liste de paramètres</section>
+					<section>Data clumps</section>
+				</section>
+				<section>Code smells - Object-Orientation abusers
+					<section>Classes alternatives avec interfaces différentes</section>
+					<section>Refused Bequest</section>
+					<section>Instructions switch</section>
+					<section>Champ temporaire</section>
+				</section>
+				<section>Code smells - Change preventers
+					<section>Changement divergent</section>
+					<section>Hiérarchies d'héritage parallèles</section>
+					<section>Chirurgie au fusil à pompe</section>
+				</section>
+				<section>Code smells - Dispensables
+					<section>Commentaires</section>
+					<section>Code dupliqué</section>
+					<section>Classes de données</section>
+					<section>Code mort</section>
+					<section>Classe fainéante</section>
+					<section>Généralité spéculative</section>
+				</section>
+				<section>Code smells - Couplers
+					<section>Envie de fonctionnalité</section>
+					<section>Intimité inappropriée</section>
+					<section>Bibliothèque incomplète</section>
+					<section>Chaine de messages</section>
+					<section>Homme du milieu</section>
+				</section>
+				<section>Mouvements de refactoring
+					<section>Extract method</section>
+					<section>Rename</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
