@@ -6,41 +6,101 @@
 
 		<title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/moon.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+		<link rel="stylesheet" href="../lib/css/monokai.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Principes</section>
+				<section>Build the right thing</section>
+				<section>Build the thing right</section>
+				<section>Approches
+					<section>Tests boite noire</section>
+					<section>Tests boite blanche</section>
+				</section>
+				<section>
+					<h2>Test logiciel</h2>
+					<img src="../img/tester-c-est-douter.jpg" />
+				</section>
+				<section>Types de tests
+					<section>Tests unitaires</section>
+					<section>Avantages / Inconvénients</section>
+					<section>Tests d'intégrations</section>
+					<section>Avantages / Inconvénients</section>
+					<section>Tests d'acceptances</section>
+					<section>Avantages / Inconvénients</section>
+					<section>Tests end-to-end</section>
+					<section>Avantages / Inconvénients</section>
+					<section>Tests manuels</section>
+					<section>Avantages / Inconvénients</section>
+					<section>Tests exploratoires</section>
+					<section>Avantages / Inconvénients</section>
+				</section>
+				<section>
+					Pyramide de tests
+					<section>Eviter la duplication</section>
+					<section>Pousser les tests vers le bas</section>
+				</section>
+				<section>Cône de glace</section>
+				<section>Test unitaire
+					<section>Test</section>
+					<section>Assertions</section>
+					<section>Given / When / Then (Arrange / Act / Assert)</section>
+					<section>Suite de test</section>
+					<section>Set up / Tear down</section>
+				</section>
+				<section>Doublure de test
+					<section>Pourquoi ?</section>
+					<section>Mock</section>
+					<section>Stub</section>
+					<section>Spy</section>
+					<section>Dummy</section>
+					<section>Fake</section>
+				</section>
+				<section>Couverture de test
+					<section>100% n'est pas un objectif</section>
+					<section>100% ne veut pas dire pas de bug</section>
+				</section>
+				<section>Automatisation</section>
+				<section>
+					Tests FIRST
+					<section>Fast</section>
+					<section>Isolated</section>
+					<section>Repeatable</section>
+					<section>Self-Validating</section>
+					<section>Timely</section>
+				</section>
 			</div>
 		</div>
 
-		<script src="js/reveal.js"></script>
+		<script src="../js/reveal.js"></script>
 
 		<script>
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				pdfSeparateFragments: false,
+				slideNumber: true,
+				hash: true,
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true }
 				]
 			});
 		</script>
