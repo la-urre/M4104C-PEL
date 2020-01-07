@@ -25,15 +25,16 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Build the right thing</section>
-				<section>Build the thing right</section>
+				<section>
+					<h2>Test logiciel</h2>
+				</section>
+				<section>
+					<h2>Pourquoi tester ?</h2>
+					<img src="../img/tester-c-est-douter.jpg" />
+				</section>
 				<section>Approches
 					<section>Tests boite noire</section>
 					<section>Tests boite blanche</section>
-				</section>
-				<section>
-					<h2>Test logiciel</h2>
-					<img src="../img/tester-c-est-douter.jpg" />
 				</section>
 				<section>Types de tests
 					<section>Tests unitaires</section>
@@ -50,19 +51,37 @@
 					<section>Avantages / Inconvénients</section>
 				</section>
 				<section>
-					Pyramide de tests
+					<h2>Pyramide de tests</h2>
+					<img src="../img/test-pyramid.png" />
 					<section>Eviter la duplication</section>
 					<section>Pousser les tests vers le bas</section>
 				</section>
 				<section>Cône de glace</section>
-				<section>Test unitaire
-					<section>Test</section>
+				<section>Tests unitaires avec JUnit
+					<section>Cas de test (Test case)</section>
 					<section>Assertions</section>
 					<section>Given / When / Then (Arrange / Act / Assert)</section>
-					<section>Suite de test</section>
+					<section>Suite de test (Test suite)</section>
 					<section>Set up / Tear down</section>
 				</section>
-				<section>Doublure de test
+				<section>Dépendances
+					<section>Comment tester ce code ?
+						<pre><code data-noescape class="language-java">
+public void resetPassword(String email) {
+    UserStore userStore = new UserStore();
+    User user = userStore.getByEmail(email);
+    if (user != null) {
+        SMTPService service = new SMTPService();
+        String body = "Password has been reset...";
+        SMTPMessage message = new SMTPMessage(email, body);
+        service.send(message);
+    }
+}
+						</code></pre>
+					</section>
+
+				</section>
+				<section>Doublure de test (Test Double)
 					<section>Pourquoi ?</section>
 					<section>Mock</section>
 					<section>Stub</section>
@@ -76,12 +95,50 @@
 				</section>
 				<section>Automatisation</section>
 				<section>
-					Tests FIRST
-					<section>Fast</section>
-					<section>Isolated</section>
-					<section>Repeatable</section>
-					<section>Self-Validating</section>
-					<section>Timely</section>
+					Tests F.I.R.S.T.
+					<section>
+						<h2>Fast</h2>
+						<h3><i>Rapides</i></h3>
+						<ul>
+							<li class="fragment">Des tests trop long freinent le développeur</li>
+							<li class="fragment">Plus le nombre de tests est important, plus les tests doivent être rapides</li>
+							<li class="fragment">Une durée idéale est quelques millisecondes par test</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Isolated / Independent</h2>
+						<h3><i>Isolés / Indépendants</i></h3>
+						<ul>
+							<li class="fragment">Un test doit vérifier un et un seul comportement</li>
+							<li class="fragment">Pas de dépendance sur l'ordre d'exécution</li>
+							<li class="fragment">Pas de dépendance sur l'environnement</li>
+							<li class="fragment">Permet de lancer les tests en parallèle</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Repeatable</h2>
+						<h3><i>Répétables</i></h3>
+						<ul>
+							<li class="fragment">Pas de dépendance sur l'environnement</li>
+							<li class="fragment">Résultats déterministes (pas de test dépendant du temps ou de l'aléatoire)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Self-Validating</h2>
+						<h3><i>Validation automatique</i></h3>
+						<ul>
+							<li class="fragment">Pas besoin d'intervention manuelle</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Thorough / Timely</h2>
+						<h3><i>Exhaustifs / Au bon moment</i></h3>
+						<ul>
+							<li class="fragment">Cas nominaux</li>
+							<li class="fragment">Cas alternatifs</li>
+							<li class="fragment">Cas d'erreur (mauvais paramètres, ...)</li>
+						</ul>
+					</section>
 				</section>
 			</div>
 		</div>
