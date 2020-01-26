@@ -17,3 +17,14 @@
 .horizontal .left-img {
    align-self: center;
 }
+
+.translation {
+   font-style: italic;
+}
+
+.recommendation-title {
+    margin-top: 5%;
+    margin-left: 5%;
+    text-align: left;
+    font-weight: bold;
+}

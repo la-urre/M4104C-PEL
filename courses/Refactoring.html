@@ -27,7 +27,17 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h2>Refactoring</h2>
+					<h2>M4104 - PEL : Agilité et bonnes pratiques de programmation</h2>
+					<h2>Chap 2 : Refactoring</h2>
+
+					<div class="img-row">					
+						<img src="../img/iut.jpg" />
+						<div>
+							<p style="font-size: 16px">Institut Universitaire de Technologie de Bayonne et du Pays Basque</p>
+							<p style="font-size: 16px">Robin Lucbernet - Christophe Marquesuzàa - Damien Urruty</p>
+							<p style="font-size: 16px">DUT Informatique 2019 / 2020 - Semestre 4</p>
+						</div>
+					</div>
 				</section>
 				<section>
 					<h2>Définition</h2>
@@ -47,54 +57,60 @@
 					</ul>
 				</section>
 				<section>
-					<h2>Référence: Refactoring de Martin Fowler</h2>
+					<h2>Référence</h2>
+					<h4>Refactoring de Martin Fowler</h4>
 					<img src="../img/refactoring-book-cover.jpg" />
 				</section>
 				<section>
-					<h2>Quand l'utiliser?</h2>
+					<h2>Quand l'utiliser ?</h2>
 					<img src="../img/refactor-then-make-change.png" />
 				</section>
 				<section>
-					<h2>Quand l'utiliser?</h2>
+					<h2>Quand l'utiliser ?</h2>
 					<h3>La fenêtre cassée</h3>
 					<img src="../img/house-broken-window.jpg" />
 				</section>
 				<section>
-					<h2>Quand l'utiliser?</h2>
+					<h2>Quand l'utiliser ?</h2>
 					<h3>La règle du boy scout</h3>
-					<h3>"Essayez de laisser ce monde un peu meilleur qu'il ne l'était quand vous y êtes venus" - Robert Baden-Powell</h3>
+					<blockquote>"Essayez de laisser ce monde un peu meilleur qu'il ne l'était quand vous y êtes venus"<footer>- Robert Baden-Powell</footer></blockquote>
 				</section>
 				<section>
-					<h2>Quand l'utiliser?</h2>
-					<h3>Quand on fait du refactor, on n'ajoute pas de fonctionnalité</h3>
-					<h3>Il faut que la décision soit partagée par les parties prenantes</h3>
+					<h2>Quand l'utiliser ?</h2>
+					<p>Pendant le temps où l'on fait du refactor, on n'ajoute pas de fonctionnalité...</p>
+					<p>=> Il faut que la décision soit partagée par les parties prenantes</p>
 				</section>
 				<section>
-					<h2>Quand l'utiliser?</h2>
-					<h3>Attention aux gros refactorings ! Procéder par étapes intermédiaires</h3>
+					<h2>Comment l'utiliser ?</h2>
+					<p>Attention aux gros refactorings !</p>
+					</p>=> Procéder par étapes intermédiaires</p>
 				</section>
 				<section>
 					<h2>Code smells</h2>
 					<img src="../img/code-smell.jpg" />
 				</section>
 				<section>
-					<h2>Code smell</h2>
-					<h3>Du code qui ne sent pas bon...</h3>
-					<h3>Se dit d'un code mal conçu, pas très lisible, difficile à comprendre et à faire évoluer</h3>
-					<h3>Il existe différentes catégories de smells</h3>
+					<h2>Code smells</h2>
+					<ul>
+						<li class="fragment">Du code qui ne sent pas bon...</li>
+						<li class="fragment">Se dit d'une portion de code mal conçue, pas très lisible, difficile à comprendre et à faire évoluer</li>
+						<li class="fragment">Il existe différentes catégories de smells</li>
+					</ul>
 				</section>
 				<section>
-					<h2>Code smell</h2>
-					<h3>Il est important de mettre des mots sur du code qui pose problème</h3>
-					<h3>Par exemple en revue de code</h3>
-					<h3>Les smells sont regroupés en différentes catégories</h3>
+					<h2>Code smells</h2>
+					<ul>
+						<li class="fragment">Il est important de mettre des mots sur du code qui pose problème</li>
+						<li class="fragment">Notamment durant une revue de code</li>
+						<li class="fragment">Les smells sont regroupés en différentes catégories</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Code smells</h2>
 					<img src="../img/smell-words.png" />
 				</section>
 				<section>
-					<h2>Bloaters (Gonfleurs)</h2>
+					<h2>Gonfleurs <span class="translation">(Bloaters)</span></h2>
 					<img src="../img/gargantua.jpg" />
 				</section>
 				<section>
@@ -102,66 +118,78 @@
 					<ul>
 						<li>Une méthode est dite longue quand elle ne tient pas sur un écran (quelques dizaines de lignes)</li>
 						<li>C'est souvent le signe qu'elle fait trop de choses</li>
-						<li>Devrait être éclatée en plusieurs méthodes et/ou classes</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Eclater en plusieurs méthodes et/ou classes</p>
 				</section>
 				<section>
 					<h2>Longue classe</h2>
 					<ul>
 						<li>Une classe est dite longue quand elle comporte beaucoup de champs, de méthodes (quelques centaines de lignes au total)</li>
 						<li>C'est souvent le signe qu'elle fait trop de choses</li>
-						<li>Devrait être éclatée en plusieurs classes</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Eclater en plusieurs classes</p>
 				</section>
 				<section>
-					<h2>Primitive obsession</h2>
+					<h2>Obsession des primitifs</h2>
 					<ul>
-						<li>On trouve souvent du code qui abuse des types primitifs :</li>
-						<li>int, String, boolean, ...</li>
-						<li>Au lieu d'utiliser des types plus précis</li>
-						<li>ex: un type Price au lieu d'un int, un type Name au lieu de 2 Strings, ...</li>
+						<li>On trouve souvent du code qui abuse des types primitifs (int, String, boolean...)</li>
+						<li>La plage de valeurs possibles est souvent trop grande</li>
+						<li>Cela ne documente pas la raison d'être de ces valeurs</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Utiliser des types plus précis (un type Price au lieu d'un int, un type Name au lieu de 2 Strings...)</p>
 				</section>
 				<section>
 					<h2>Longue liste de paramètres</h2>
 					<ul>
 						<li>Une liste de paramètres est dite longue si elle comporte 7-8 paramètres ou plus</li>
-						<li>C'est souvent le signe que la méthode fait trop de choses...</li>
-						<li>...ou qu'il manque un type pour grouper ces informations</li>
+						<li>C'est souvent le fait de changements incrémentaux</li>
+						<li>Augmente mécaniquement la taille de la méthode ou du constructeur</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Eclater en plusieurs méthodes ou grouper les paramètres dans un type</p>
 				</section>
 				<section>
-					<h2>Data clumps</h2>
+					<h2>Paquet de données</h2>
 					<ul>
 						<li>Un groupe de paramètres ou de variables se répète à différents endroits</li>
-						<li>Ca peut être le signe d'un copier/coller</li>
-						<li>Il peut être nécessaire d'extraire ces informations dans une classe dédiée</li>
+						<li>Cela peut être le signe d'un copier/coller</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Extraire ces informations dans une classe dédiée</p>
 				</section>
 				<section>
-					<h2>Object-Orientation abusers</h2>
+					<h2>Détournements de l'orienté-objet <span class="translation">(Object-Orientation abusers)</span></h2>
 					<img src="../img/misused.jpg" />
 				</section>
 				<section>
 					<h2>Classes alternatives avec interfaces différentes</h2>
 					<ul>
 						<li>Deux classes qui font la même chose mais qui n'ont pas les mêmes signatures de méthodes</li>
-						<li>On peut envisager de n'en garder qu'une seule</li>
+						<li>Peut arriver quand deux développeurs travaillent sur des thèmes liés sans se concerter</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Garder une seule de ces classes</p>
 				</section>
 				<section>
-					<h2>Refused Bequest</h2>
+					<h2>Refus d'héritage</h2>
 					<ul>
 						<li>Une classe fille n'utilise que certains éléments de sa classe parent</li>
 						<li>L'héritage n'est sans doute pas la bonne solution dans ce cas</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Favoriser la composition à l'héritage</p>
 				</section>
 				<section>
 					<h2>Instructions switch</h2>
 					<ul>
-						<li>Imbrication complexe de switch et de if</li>
-						<li>Souvent le signe qu'on n'encapsule pas assez des comportements dans des objets</li>
+						<li>Imbrication complexe de switch et/ou de if</li>
+						<li>Augmente mécaniquement la taille de la méthode ou du constructeur</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Encapsuler ces comportements dans des classes</p>
 				</section>
 				<section>
 					<h2>Champs temporaires</h2>
@@ -169,24 +197,29 @@
 						<li>Certains champs ne servent que dans certaines conditions ce qui peut prêter à confusion</li>
 						<li>Cela complique la compréhension du programme</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Extraire ces champs vers une autre classe</p>
 				</section>
 				<section>
-					<h2>Change preventers</h2>
-					<img src="../img/tree-road-new.jpg" />
+					<h2>Freins au changement <span class="translation">(Change preventers)</span></h2>
+					<img src="../img/tree-road.jpg" />
 				</section>
 				<section>
 					<h2>Changement divergent</h2>
 					<ul>
 						<li>Ajouter une fonctionnalité implique de changer beaucoup de code qui ne semble pas lié</li>
-						<li>C'est le signe que le code est trop couplé</li>
+						<li>C'est le signe que le code est trop couplé (copier/coller ?)</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Extraire ce code dupliqué vers une même méthode/classe</p>
 				</section>
 				<section>
 					<h2>Hiérarchies d'héritage parallèles</h2>
 					<ul>
 						<li>Ajouter une sous-classe dans une hiérarchie implique de rajouter une sous-classe ailleurs</li>
-						<li>L'organisation de la hiérarchie est probablement à revoir</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Réorganiser la hiérarchie</p>
 				</section>
 				<section>
 					<h2>Chirurgie au fusil à pompe</h2>
@@ -194,9 +227,11 @@
 						<li>Faire un changement implique de modifier beaucoup de fichiers différents</li>
 						<li>L'organisation du code est probablement à revoir</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Identifier les duplications et réorganiser le code</p>
 				</section>
 				<section>
-					<h2>Dispensables</h2>
+					<h2>Superflus <span class="translation">(Dispensables)</span></h2>
 					<img src="../img/dispensable.jpg" />
 				</section>
 				<section>
@@ -204,20 +239,27 @@
 					<ul>
 						<li>La plupart des commentaires peuvent être enlevés en ayant du code qui se documente tout seul</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Ecrire du code qui se documente tout seul... puis enlever ces commentaires</p>
 				</section>
 				<section>
 					<h2>Code dupliqué</h2>
 					<ul>
 						<li>Souvent le fait d'un copier/coller, du code dupliqué est compliqué à maintenir</li>
-						<li>Si on fait un changement il faut bien penser à le faire partout</li>
+						<li>Si on fait un changement il faut bien penser à le faire partout sous peine de bug</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Factoriser ce code dupliqué</p>
 				</section>
 				<section>
 					<h2>Code mort</h2>
 					<ul>
 						<li>Le code mort ne sert pas</li>
-						<li>Il pollue donc la base de code et doit être supprimé</li>
+						<li>Il pollue donc la base de code</li>
+						<li>Si besoin on peut le retrouver grâce au versioning</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Supprimer le code mort</p>
 				</section>
 				<section>
 					<h2>Classe fainéante</h2>
@@ -225,32 +267,37 @@
 						<li>C'est une classe qui ne fait quasiment rien</li>
 						<li>On peut se poser la question de sa pertinence</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Supprimer cette classe</p>
 				</section>
 				<section>
 					<h2>Généralité spéculative</h2>
 					<ul>
-						<li>On prévoit du code "au cas où", ou dont on aura besoin plus tard</li>
-						<li>La bonne façon de faire est de le créer au moment où on en a besoin (voir YAGNI)</li>
+						<li>On prévoit du code "au cas où", dont on aura peut-être besoin plus tard</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Ne pas écrire du code "au cas où" (voir YAGNI)</p>
 				</section>
 				<section>
-					<h2>Couplers (Coupleurs)</h2>
+					<h2>Coupleurs <span class="translation">(Couplers)</span></h2>
 					<img src="../img/weld.jpg" />
 				</section>
 				<section>
 					<h2>Envie de fonctionnalité</h2>
 					<ul>
 						<li>Une classe accède à beaucoup d'informations d'une autre pour réaliser des traitements</li>
-						<li>Peut-être le traitement devrait être porté par la seconde classe</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Déplacer le code dans la classe "enviée"</p>
 				</section>
 				<section>
 					<h2>Intimité inappropriée</h2>
 					<ul>
 						<li>Une classe accède à des informations "internes" d'une autre classe</li>
 						<li>Cela casse la règle d'encapsulation</li>
-						<li>Peut-être le traitement devrait être porté par la seconde classe</li>
 					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Déplacer le traitement dans la classe "épiée"</p>
 				</section>
 				<section>
 					<h2>Chaine de messages</h2>
@@ -258,21 +305,14 @@
 						<li>Pour pouvoir appeler une méthode, on doit passer par une chaine d'appels intermédiaires</li>
 						<li>Cela signifie que la méthode qui nous intéresse est "trop loin" de nous</li>
 					</ul>
-				</section>
-				<section>
-					<h2>Null c'est nul !</h2>
-					<ul>
-						<li>null est très souvent utilisé pour représenter l'absence d'une valeur</li>
-						<li>Très souvent on oublie à un endroit de vérifier si la valeur vaut null => NullPointerException</li>
-						<li>Certains langages n'ont pas d'équivalent du null pour éviter ce genre de problèmes</li>
-						<li>Depuis Java 8 on a tendance à privilégier les Optionals</li>
-					</ul>
+					<p class="recommendation-title">> Recommandation</p>
+					<p>&#128161 Créer de nouvelles méthodes qui propagent les appels</p>
 				</section>
 				<section>
 					<h2>Mouvements de refactoring</h2>
 					<ul>
 						<li>Une fois que l'on a indentifié un smell, il existe un ou plusieurs mouvements associés</li>
-						<li>On peut trouver une liste ici : <a href="https://refactoring.com/">https://refactoring.com</a></li>
+						<li>On peut trouver une liste sur : <a href="https://refactoring.com/">https://refactoring.com</a></li>
 					</ul>
 				</section>
 			</div>
