@@ -1,0 +1,541 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/beige.css">
+		<link rel="stylesheet" href="../css/custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Qualité logicielle</h2>
+				</section>
+				<section>
+					<h2>Quel est le point commun entre</h2>
+					<div class="img-row">
+						<img src="../img/mars-climate-orbiter.jpg" />
+						<img src="../img/apple.jpg" />
+						<img src="../img/gandhi.jpg" />
+					</div>
+				</section>
+				<section>
+					<div class="horizontal">
+						<img class="left-img" src="../img/mars-climate-orbiter.jpg" />
+						<div>
+							<h2>Mars Climate Orbiter</h2>
+							<ul>
+								<li>Sonde écrasée sur Mars en 1999</li>
+								<li>Erreur causée par un problème d'unité: système américain vs international</li>
+								<li>Coût total : $327 millions</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="horizontal">
+						<img class="left-img" src="../img/apple.jpg" />
+						<div>
+							<h2>Apple goto fail</h2>
+							<ul>
+								<li>Faille dans la validation de certificats HTTPS (iOS et OS X)</li>
+								<li>Double goto court-circuitant des validations</li>
+								<li>Des millions de machines vulnérables</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="horizontal">
+						<img class="left-img" src="../img/apple.jpg" />
+						<div>
+							<h2> Apple "goto fail"</h2>
+							<img src="../img/goto-fail.jpg" />
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="horizontal">
+						<img class="left-img" src="../img/gandhi.jpg" />
+						<div>
+							<h2>Gandhi dans le jeu</h2>
+							<img src="../img/civilization.png" />
+							<ul>
+								<li>Censé être le personnage le plus pacifique du jeu</li>
+								<li>A cause d'un integer underflow devient le plus aggressif</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Ce ne sont que 3 exemples parmi des millions</h3>
+					<h3>Il y aura toujours des comportements non prévus et des bugs...</h3>
+					<h3>Est-ce une fatalité ? Que pouvons-nous faire pour tenter d'y remédier ?</h3>
+				</section>
+				<section>
+					<h2>Qu'est qu'un logiciel de qualité selon vous ?</h2>
+				</section>
+				<section>
+					<h2>Caractéristiques ISO 9126</h2>
+				</section>
+				<section>
+					<h2>Capacité fonctionnelle (Functionality)</h2>
+					<ul>
+						<li>L’aptitude (Suitability)</li>
+						<li>L’exactitude (Accuracy)</li>
+						<li>L’interopérabilité (Interoperability)</li>
+						<li>La conformité (Compliance)</li>
+						<li>La sécurité (Security)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Fiabilité (Reliability)</h2>
+					<ul>
+						<li>La maturité (Maturity)</li>
+						<li>La tolérance aux fautes (Fault Tolerance)</li>
+						<li>La capacité de récupération (Recoverability)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Facilité d’usage (Usability)</h2>
+					<ul>
+						<li>L’exploitabilité (Operability)</li>
+						<li>La facilité d’apprentissage (Learnability)</li>
+						<li>La facilité de compréhension (Understandability)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Efficacité (Efficiency)</h2>
+					<ul>
+						<li>L’efficacité des ressources employées (Resource Behaviour)</li>
+						<li>L’efficacité des temps de réalisation (Time Behaviour)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Maintenabilité (Maintainability)</h2>
+					<ul>
+						<li>La stabilité (Stability)</li>
+						<li>La facilité de modification (Changeability)</li>
+						<li>La facilité d’analyse (Analysability)</li>
+						<li>La facilité à être testé (Testability)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Portabilité (Portability)</h2>
+					<ul>
+						<li>La facilité d’installation (Installability)</li>
+						<li>La facilité de migration (Replaceability)</li>
+						<li>L’adaptabilité (Adaptability)</li>
+						<li>Conformité (propre à la portabilité, par exemple, conformité à des normes de bases de données)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Quels moyens pour arriver à un produit logiciel de qualité ?</h2>
+					<ul>
+						<li class="fragment">Clean code</li>
+						<li class="fragment">Test</li>
+						<li class="fragment">Refactoring vers du code simple</li>
+						<li class="fragment">Revues (code, conception)</li>
+						<li class="fragment">Travail en équipe et organisé (ex: XP, Scrum, ...)</li>
+						<li class="fragment">Proximité du client</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Statistiques sur le taux de détection de défauts</h2>
+					<img src="../img/defect-detection-rates.png" />
+				</section>
+				<section>
+					<h2>Test logiciel</h2>
+				</section>
+				<section>
+					<h2>Pourquoi tester ?</h2>
+					<img src="../img/tester-c-est-douter.jpg" />
+				</section>
+				<section>
+					<h2>Approche boite noire</h2>
+					<img src="../img/blackbox-testing.png" />
+				</section>
+				<section>
+					<h2>Approche boite blanche</h2>
+					<img src="../img/whitebox-testing.jpeg" />
+				</section>
+				<section>
+					<h2>Types de tests</h2>
+					<ul>
+						<li>Tests unitaires</li>
+						<li>Tests d'intégrations</li>
+						<li>Tests end-to-end</li>
+						<li>Tests d'acceptances</li>
+						<li>Tests de fumée (Smoke test)</li>
+						<li>Tests exploratoires</li>
+						<li>Tests de performance</li>
+						<li>...</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests unitaires</h2>
+					<ul>
+						<li>Vérifient le bon fonctionnement d'un morceau de code (unité)</li>
+						<li>Ecrits avec du code</li>
+						<li>4 phases pour chaque test
+							<ul>
+								<li>Initialisation</li>
+								<li>Exercice</li>
+								<li>Vérification</li>
+								<li>Démontage</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests unitaires - Caractéristiques</h2>
+					<ul>
+						<li>S'exécutent très rapidement (quelques ms)</li>
+						<li>Ecrits pour les programmeurs (souvent par les programmeurs)</li>
+						<li>En général testent de la technique mais peuvent tester du fonctionnel</li>
+						<li>Servent de documentation</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests d'intégration/service</h2>
+					<ul>
+						<li>Vérifient le bon assemblage de plusieurs composants</li>
+						<li>Ecrits pour les programmeurs (souvent par les programmeurs)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests end-to-end</h2>
+					<ul>
+						<li>Vérifient le bon fonctionnement du logiciel</li>
+						<li>Ecrits pour le client et les programmeurs</li>
+						<li>Exercent l'UI tel un utilisateur</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests d'acceptance</h2>
+					<ul>
+						<li>Vérifient le bon fonctionnement du logiciel</li>
+						<li>Ecrits pour le client et les programmeurs</li>
+						<li>Peuvent se trouver plus au moins proche du code</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests de fumée</h2>
+					<ul>
+						<li>Vérifient le logiciel dans les cas simples</li>
+						<li>Le nom provient du hardware</li>
+						<li>Tests manuels</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests de performance</h2>
+					<ul>
+						<li>Tests manuels</li>
+						<li>Utilisation processeur</li>
+						<li>Utilisation mémoire</li>
+						<li>Utilisation disque</li>
+						<li>Montée en charge</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests manuels</h2>
+					<ul>
+						<li>Réalisé en général par des testeurs</li>
+						<li>Suivent en général un plan de test</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Attention !</h2>
+					<blockquote>"Testing shows the presence, not the absence of bugs." - E. Dijkstra</blockquote>
+				</section>
+				<section>
+					<h2>Pyramide de tests</h2>
+					<img src="../img/test-pyramid.png" />
+				</section>
+				<section>
+					<h2>Pyramide de tests</h2>
+					<ul>
+						<li class="fragment">Eviter la duplication</li>
+						<li class="fragment">Pousser les tests vers le bas</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Mauvaise pratique : le cône de glace</h2>
+					<img src="../img/ice-cone.png" />
+				</section>
+				<section>
+					<h2>Tests unitaires (avec JUnit)</h2>
+					<img src="../img/unit-test-code.jpg" />
+				</section>
+				<section>
+					<h2>Nous allons utiliser ce projet comme exemple</h2>
+					<a href="https://github.com/la-urre/code-smells">https://github.com/la-urre/code-smells</a>
+				</section>
+				<section>
+					<h2>Assertions</h2>
+					<h3>Vérification d'une condition, d'un état particulier</h3>
+					<h3>Au moins une assertion par cas de test !</h3>
+					<img src="../img/no-assertion.jpg" />
+				</section>
+				<section>
+					<h2>Assertions (JUnit)</h2>
+					<pre><code data-noescape class="language-java">
+assertEquals(expectedValue, actualValue);
+					</code></pre>
+					<h3>Privilégier la bibliothèque AssertJ pour des assertions proches du langage naturel (fluent)</h3>
+					<pre><code data-noescape class="language-java">
+assertThat(actualValue).isEqualTo(expected);
+assertThat(actualList).contains(value);
+					</code></pre>
+				</section>
+				<section>
+					<h2>Un test se décompose en 3 parties</h2>
+					<ul>
+						<li>Given/Arrange: Etant donné un état initial</li>
+						<li>When/Act: Quand on réalise quelque chose</li>
+						<li>Then/Assert: Alors on s'attend à un certain état final</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Given / When / Then</h2>
+					<pre><code data-noescape class="language-java">
+    // GIVEN
+    Order order = new Order(Pub.ONE_BEER, false, 1);
+
+    // WHEN
+    int actualPrice = pub.computeCost(order);
+
+    // THEN
+    assertThat(actualPrice).isEqualTo(74);
+					</code></pre>
+				</section>
+				<section>
+					<h2>Cas de test (Test case)</h2>
+					<pre><code data-noescape class="language-java">
+@Test
+public void pay_74_for_a_beer() {
+    Order order = new Order(Pub.ONE_BEER, false, 1);
+
+    int actualPrice = pub.computeCost(order);
+
+    assertThat(actualPrice).isEqualTo(74);
+}
+					</code></pre>
+				</section>
+				<section>
+					<h2>Cas de test (Test case)</h2>
+					<ul>
+						<li>Privilégier le snake_case</li>
+						<li>Espacer les Given / When / Then</li>
+						<li>Un cas de test doit être assez court (max 7-8 lignes)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Suite de test (Test suite)</h2>
+					<ul>
+						<li>Permet de grouper les tests</li>
+						<li>En général une suite de test par classe</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Set up / Tear down (Montage / Démontage)</h3>
+					<h4>Méthodes exécutées avant / après chaque cas de test</h4>
+					<pre><code data-noescape class="language-java">
+@BeforeEach
+public void setUp() {
+    // initialisations
+}
+
+@TearDown
+public void tearDown() {
+    // nettoyages
+}
+					</code></pre>
+				</section>
+				<section>
+					<h2>Tests unitaires et dépendances</h2>
+				</section>
+				<section>
+					<h2>Comment tester ce code ?</h2>
+					<pre><code data-noescape class="language-java">
+public int printReceipt(String drink, boolean student, int amount) {
+    // [...]
+    USBPrinter printer = new USBPrinter("/dev/ttyUSB0");
+    printer.print(drink, student, amount, price*amount);
+    // [...]
+}
+					</code></pre>
+				</section>
+				<section>
+					<h2>Doublure de test (Test Double)</h2>
+					<img src="../img/test-double.jpg" />
+				</section>
+				<section>
+					<h2>Pourquoi ?</h2>
+					<ul>
+						<li>Parfois on ne veut pas exécuter une partie de code pendant le test (envoi de mail, base de donnée, réseau, ...)</li>
+						<li>On remplace donc l'implémentation d'un module par une fausse</li>
+						<li>Meilleur performance en utilisant une doublure</li>
+						<li>On utilise le type de doublure le plus adapté en fonction des cas</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Comment ?</h2>
+					<ul>
+						<li>Il suffit d'implémenter une interface pour pouvoir avoir plusieurs implémentations</li>
+						<li>Une dite de "production", une (ou plusieurs) de test</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Stub (Bouchon)</h2>
+					<ul>
+						<li>Permet de pré-configurer les futures réponses du module doublure</li>
+						<li>Utile pour une base de donnée, un appel réseau, une saisie utilisateur...</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Spy (Espion)</h2>
+					<ul>
+						<li>Implémentation qui enregistre les intéractions avec le module</li>
+						<li>Permet de récupérer les intéractions passées</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Dummy</h2>
+					<ul>
+						<li>Doublure qui ne fait rien de particulier</li>
+						<li>Utile pour créer une doublure minimale dont on ne se sert pas vraiment</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Fake (Faux)</h2>
+					<ul>
+						<li>Implémentation qui fonctionne mais qui prend des raccourcis</li>
+						<li>Exemple: une base de donnée en mémoire</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Mock</h2>
+					<ul>
+						<li>Permet de pré-configurer les futures réponses du module doublé (comme le stub)...</li>
+						<li>... et de vérifier les intéractions en fin de test (comme le spy)</li>
+						<li>Des bibliothèques peuvent aider, par exemple Mockito</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Couverture de code</h2>
+				</section>
+				<section>
+					<h2>La couverture de code, c'est quoi ?</h2>
+					<ul>
+						<li>Mesure qui permet de voir la proportion de code de production exécutée par les tests</li>
+						<li>S'exprime en général en pourcentage</li>
+						<li>Permet de s'assurer qu'un morceau de code est couvert par les tests</li>
+						<li>Dans certains IDEs on peut voir la couverture pour chaque ligne de code</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Couverture de test</h2>
+					<h3>100% n'est pas un objectif</h3>
+					<h3>100% de couverture ne veut pas dire pas de bug</h3>
+				</section>
+				<section>
+					<h2>Automatisation des tests</h2>
+					<ul>
+						<li class="fragment">Servent comme filet de sécurité (harnais de test)</li>
+						<li class="fragment">Vérifient la non-régression</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests F.I.R.S.T.</h2>
+					<h3>Bonnes pratiques pour l'écriture de tests</h3>
+				</section>
+				<section>
+					<h2>Tests <b>F</b>.I.R.S.T.</h2>
+					<h3>Fast <i>(Rapides)</i></h3>
+					<ul>
+						<li class="fragment">Des tests trop long freinent le développeur</li>
+						<li class="fragment">Plus le nombre de tests est important, plus les tests doivent être rapides</li>
+						<li class="fragment">Une durée idéale est quelques millisecondes par test</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests F.<b>I</b>.R.S.T.</h2>
+					<h3>Isolated / Independent <i>(Isolés / Indépendants)</i></h3>
+					<ul>
+						<li class="fragment">Un test doit vérifier un et un seul comportement</li>
+						<li class="fragment">Pas de dépendance sur l'ordre d'exécution</li>
+						<li class="fragment">Pas de dépendance sur l'environnement</li>
+						<li class="fragment">Permet de lancer les tests en parallèle</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests F.I.<b>R</b>.S.T.</h2>
+					<h3>Repeatable <i>(Répétables)</i></h3>
+					<ul>
+						<li class="fragment">Pas de dépendance sur l'environnement</li>
+						<li class="fragment">Comportement déterministe (pas de test dépendant du temps ou de l'aléatoire)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests F.I.R.<b>S</b>.T.</h2>
+					<h3>Self-Validating </h3><i>(Auto-Validant)</i>
+					<ul>
+						<li class="fragment">Pas besoin d'intervention manuelle</li>
+						<li class="fragment">Un test passe ou échoue, pas d'autre état possible</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tests F.I.R.S.<b>T</b>.</h2>
+					<h3>Thorough / Timely <i>(Exhaustifs / Au bon moment)</i></h3>
+					<ul>
+						<li class="fragment">Cas nominaux</li>
+						<li class="fragment">Cas alternatifs</li>
+						<li class="fragment">Cas d'erreur (mauvais paramètres, ...)</li>
+						<li class="fragment">De préférence écrits avant le code qui va avec</li>
+					</ul>
+				</section>
+				<section>
+					Complément: <a href="https://medium.com/@kentbeck_7670/test-desiderata-94150638a4b3">Desiderata des tests</a>
+				</section>
+			</div>
+		</div>
+
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				pdfSeparateFragments: false,
+				slideNumber: true,
+				hash: true,
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

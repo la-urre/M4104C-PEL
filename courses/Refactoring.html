@@ -8,7 +8,8 @@
 
 		<link rel="stylesheet" href="../css/reset.css">
 		<link rel="stylesheet" href="../css/reveal.css">
-		<link rel="stylesheet" href="../css/theme/black.css">
+		<link rel="stylesheet" href="../css/theme/beige.css">
+		<link rel="stylesheet" href="../css/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="../lib/css/monokai.css">
@@ -25,53 +26,254 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Refactoring</section>
-				<section>Définition</section>
-				<section>Règles
-					<section>Le code est plus propre</section>
-					<section>Aucune fonctionnalité n'est modifiée/introduite</section>
-					<section>Pas de refactoring sans tests automatiques</section>
-					<section>Les tests passent toujours à la fin</section>
+				<section>
+					<h2>Refactoring</h2>
 				</section>
-				<section>Origines</section>
-				<section>Quand l'utiliser?</section>
-				<section>La règle du boy scout</section>
-				<section>Code smells - Bloaters
-					<section>Méthode longue</section>
-					<section>Longue classe</section>
-					<section>Primitive obsession</section>
-					<section>Longue liste de paramètres</section>
-					<section>Data clumps</section>
+				<section>
+					<h2>Définition</h2>
+					<ul>
+						<li class="fragment">Opération consistant à améliorer un code existant...</li>
+						<li class="fragment">pour le rendre plus lisible et maintenable...</li>
+						<li class="fragment">sans en changer le fonctionnement</li>
+					</ul>
 				</section>
-				<section>Code smells - Object-Orientation abusers
-					<section>Classes alternatives avec interfaces différentes</section>
-					<section>Refused Bequest</section>
-					<section>Instructions switch</section>
-					<section>Champ temporaire</section>
+				<section>
+					<h2>Règles</h2>
+					<ul>
+						<li class="fragment">Le code doit devenir plus propre</li>
+						<li class="fragment">Aucune fonctionnalité n'est modifiée/introduite</li>
+						<li class="fragment">Pas de refactoring sans tests automatiques</li>
+						<li class="fragment">Les tests passent toujours à la fin</li>
+					</ul>
 				</section>
-				<section>Code smells - Change preventers
-					<section>Changement divergent</section>
-					<section>Hiérarchies d'héritage parallèles</section>
-					<section>Chirurgie au fusil à pompe</section>
+				<section>
+					<h2>Référence: Refactoring de Martin Fowler</h2>
+					<img src="../img/refactoring-book-cover.jpg" />
 				</section>
-				<section>Code smells - Dispensables
-					<section>Commentaires</section>
-					<section>Code dupliqué</section>
-					<section>Classes de données</section>
-					<section>Code mort</section>
-					<section>Classe fainéante</section>
-					<section>Généralité spéculative</section>
+				<section>
+					<h2>Quand l'utiliser?</h2>
+					<img src="../img/refactor-then-make-change.png" />
 				</section>
-				<section>Code smells - Couplers
-					<section>Envie de fonctionnalité</section>
-					<section>Intimité inappropriée</section>
-					<section>Bibliothèque incomplète</section>
-					<section>Chaine de messages</section>
-					<section>Homme du milieu</section>
+				<section>
+					<h2>Quand l'utiliser?</h2>
+					<h3>La fenêtre cassée</h3>
+					<img src="../img/house-broken-window.jpg" />
 				</section>
-				<section>Mouvements de refactoring
-					<section>Extract method</section>
-					<section>Rename</section>
+				<section>
+					<h2>Quand l'utiliser?</h2>
+					<h3>La règle du boy scout</h3>
+					<h3>"Essayez de laisser ce monde un peu meilleur qu'il ne l'était quand vous y êtes venus" - Robert Baden-Powell</h3>
+				</section>
+				<section>
+					<h2>Quand l'utiliser?</h2>
+					<h3>Quand on fait du refactor, on n'ajoute pas de fonctionnalité</h3>
+					<h3>Il faut que la décision soit partagée par les parties prenantes</h3>
+				</section>
+				<section>
+					<h2>Quand l'utiliser?</h2>
+					<h3>Attention aux gros refactorings ! Procéder par étapes intermédiaires</h3>
+				</section>
+				<section>
+					<h2>Code smells</h2>
+					<img src="../img/code-smell.jpg" />
+				</section>
+				<section>
+					<h2>Code smell</h2>
+					<h3>Du code qui ne sent pas bon...</h3>
+					<h3>Se dit d'un code mal conçu, pas très lisible, difficile à comprendre et à faire évoluer</h3>
+					<h3>Il existe différentes catégories de smells</h3>
+				</section>
+				<section>
+					<h2>Code smell</h2>
+					<h3>Il est important de mettre des mots sur du code qui pose problème</h3>
+					<h3>Par exemple en revue de code</h3>
+					<h3>Les smells sont regroupés en différentes catégories</h3>
+				</section>
+				<section>
+					<h2>Code smells</h2>
+					<img src="../img/smell-words.png" />
+				</section>
+				<section>
+					<h2>Bloaters (Gonfleurs)</h2>
+					<img src="../img/gargantua.jpg" />
+				</section>
+				<section>
+					<h2>Méthode longue</h2>
+					<ul>
+						<li>Une méthode est dite longue quand elle ne tient pas sur un écran (quelques dizaines de lignes)</li>
+						<li>C'est souvent le signe qu'elle fait trop de choses</li>
+						<li>Devrait être éclatée en plusieurs méthodes et/ou classes</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Longue classe</h2>
+					<ul>
+						<li>Une classe est dite longue quand elle comporte beaucoup de champs, de méthodes (quelques centaines de lignes au total)</li>
+						<li>C'est souvent le signe qu'elle fait trop de choses</li>
+						<li>Devrait être éclatée en plusieurs classes</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Primitive obsession</h2>
+					<ul>
+						<li>On trouve souvent du code qui abuse des types primitifs :</li>
+						<li>int, String, boolean, ...</li>
+						<li>Au lieu d'utiliser des types plus précis</li>
+						<li>ex: un type Price au lieu d'un int, un type Name au lieu de 2 Strings, ...</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Longue liste de paramètres</h2>
+					<ul>
+						<li>Une liste de paramètres est dite longue si elle comporte 7-8 paramètres ou plus</li>
+						<li>C'est souvent le signe que la méthode fait trop de choses...</li>
+						<li>...ou qu'il manque un type pour grouper ces informations</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Data clumps</h2>
+					<ul>
+						<li>Un groupe de paramètres ou de variables se répète à différents endroits</li>
+						<li>Ca peut être le signe d'un copier/coller</li>
+						<li>Il peut être nécessaire d'extraire ces informations dans une classe dédiée</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Object-Orientation abusers</h2>
+					<img src="../img/misused.jpg" />
+				</section>
+				<section>
+					<h2>Classes alternatives avec interfaces différentes</h2>
+					<ul>
+						<li>Deux classes qui font la même chose mais qui n'ont pas les mêmes signatures de méthodes</li>
+						<li>On peut envisager de n'en garder qu'une seule</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Refused Bequest</h2>
+					<ul>
+						<li>Une classe fille n'utilise que certains éléments de sa classe parent</li>
+						<li>L'héritage n'est sans doute pas la bonne solution dans ce cas</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Instructions switch</h2>
+					<ul>
+						<li>Imbrication complexe de switch et de if</li>
+						<li>Souvent le signe qu'on n'encapsule pas assez des comportements dans des objets</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Champs temporaires</h2>
+					<ul>
+						<li>Certains champs ne servent que dans certaines conditions ce qui peut prêter à confusion</li>
+						<li>Cela complique la compréhension du programme</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Change preventers</h2>
+					<img src="../img/tree-road-new.jpg" />
+				</section>
+				<section>
+					<h2>Changement divergent</h2>
+					<ul>
+						<li>Ajouter une fonctionnalité implique de changer beaucoup de code qui ne semble pas lié</li>
+						<li>C'est le signe que le code est trop couplé</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Hiérarchies d'héritage parallèles</h2>
+					<ul>
+						<li>Ajouter une sous-classe dans une hiérarchie implique de rajouter une sous-classe ailleurs</li>
+						<li>L'organisation de la hiérarchie est probablement à revoir</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Chirurgie au fusil à pompe</h2>
+					<ul>
+						<li>Faire un changement implique de modifier beaucoup de fichiers différents</li>
+						<li>L'organisation du code est probablement à revoir</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Dispensables</h2>
+					<img src="../img/dispensable.jpg" />
+				</section>
+				<section>
+					<h2>Commentaires</h2>
+					<ul>
+						<li>La plupart des commentaires peuvent être enlevés en ayant du code qui se documente tout seul</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Code dupliqué</h2>
+					<ul>
+						<li>Souvent le fait d'un copier/coller, du code dupliqué est compliqué à maintenir</li>
+						<li>Si on fait un changement il faut bien penser à le faire partout</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Code mort</h2>
+					<ul>
+						<li>Le code mort ne sert pas</li>
+						<li>Il pollue donc la base de code et doit être supprimé</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Classe fainéante</h2>
+					<ul>
+						<li>C'est une classe qui ne fait quasiment rien</li>
+						<li>On peut se poser la question de sa pertinence</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Généralité spéculative</h2>
+					<ul>
+						<li>On prévoit du code "au cas où", ou dont on aura besoin plus tard</li>
+						<li>La bonne façon de faire est de le créer au moment où on en a besoin (voir YAGNI)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Couplers (Coupleurs)</h2>
+					<img src="../img/weld.jpg" />
+				</section>
+				<section>
+					<h2>Envie de fonctionnalité</h2>
+					<ul>
+						<li>Une classe accède à beaucoup d'informations d'une autre pour réaliser des traitements</li>
+						<li>Peut-être le traitement devrait être porté par la seconde classe</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Intimité inappropriée</h2>
+					<ul>
+						<li>Une classe accède à des informations "internes" d'une autre classe</li>
+						<li>Cela casse la règle d'encapsulation</li>
+						<li>Peut-être le traitement devrait être porté par la seconde classe</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Chaine de messages</h2>
+					<ul>
+						<li>Pour pouvoir appeler une méthode, on doit passer par une chaine d'appels intermédiaires</li>
+						<li>Cela signifie que la méthode qui nous intéresse est "trop loin" de nous</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Null c'est nul !</h2>
+					<ul>
+						<li>null est très souvent utilisé pour représenter l'absence d'une valeur</li>
+						<li>Très souvent on oublie à un endroit de vérifier si la valeur vaut null => NullPointerException</li>
+						<li>Certains langages n'ont pas d'équivalent du null pour éviter ce genre de problèmes</li>
+						<li>Depuis Java 8 on a tendance à privilégier les Optionals</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Mouvements de refactoring</h2>
+					<ul>
+						<li>Une fois que l'on a indentifié un smell, il existe un ou plusieurs mouvements associés</li>
+						<li>On peut trouver une liste ici : <a href="https://refactoring.com/">https://refactoring.com</a></li>
+					</ul>
 				</section>
 			</div>
 		</div>

@@ -1,0 +1,19 @@
+.img-row {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.img-row img {
+   float:left;
+   width: 20%;
+   height: 45%;
+}
+
+.horizontal {
+   display: flex;
+   gap: 5%;
+}
+
+.horizontal .left-img {
+   align-self: center;
+}
