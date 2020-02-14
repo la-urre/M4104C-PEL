@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Mini-Projet : Prise en main</title>
+
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/beige.css">
+		<link rel="stylesheet" href="../css/custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>Mini-projet : Prise en main</h3>
+
+					<div class="img-row">
+						<img src="../img/iut.jpg" />
+						<div>
+							<p style="font-size: 16px">M4104 - PEL : Agilité et bonnes pratiques de programmation</p>
+							<p style="font-size: 16px">Institut Universitaire de Technologie de Bayonne et du Pays Basque</p>
+							<p style="font-size: 16px">Robin Lucbernet - Christophe Marquesuzàa - Damien Urruty</p>
+							<p style="font-size: 16px">DUT Informatique 2019 / 2020 - Semestre 4</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>Objectifs</h2>
+					<ul>
+						<li>Configurer l'IDE IntelliJ</li>
+						<li>Récupérer le projet et le tableau de suivi</li>
+						<li>Jouer !</li>
+						<li>Faire remonter les idées d'amélioration / bugs / nouvelles fonctionnalités sur le tableau de suivi</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Configurer l'IDE </h2>
+					<ul>
+						<li>Installation du plugin SonarLint</li>
+						<li>Choix de Java 12</li>
+					</ul>
+				</section>
+				<section>
+					<h2>SonarLint</h2>
+					<div class="horizontal">
+						<img src="img/sonarlint.png" />
+						<ul>
+							<li>Analyseur statique de code (Linter)</li>
+							<li>Vérifie que le code respecte les bonnes pratiques</li>
+							<li>Souligne le code problématique</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h3>IntelliJ : Installation de SonarLint (1/4)</h3>
+					<img src="img/home-plugins.png" />
+				</section>
+				<section>
+					<h3>IntelliJ : Installation de SonarLint (2/4)</h3>
+					<img src="img/plugins-sonarlint.png" />
+				</section>
+				<section>
+					<h3>Installation de SonarLint (3/4)</h3>
+					<img src="img/plugins-sonarlint-restart.png" />
+				</section>
+				<section>
+					<h3>IntelliJ : Installation de SonarLint (4/4)</h3>
+					<img src="img/plugins-sonarlint-restart-confirm.png" />
+				</section>
+				<section>
+					<h3>IntelliJ : Choix de Java 12 (1/5)</h3>
+					<img src="img/home-structure.png" />
+				</section>
+				<section>
+					<h3>IntelliJ : Choix de Java 12 (2/5)</h3>
+					<img src="img/jdk-1-8.png" />
+				</section>
+				<section>
+					<h3>IntelliJ : Choix de Java 12 (3/5)</h3>
+					<img src="img/jdk-add.png" />
+				</section>
+				<section>
+					<h3>IntelliJ : Choix de Java 12 (4/5)</h3>
+					<img src="img/jdk-12-home.png" />
+				</section>
+				<section>
+					<h3>IntelliJ : Choix de Java 12 (5/5)</h3>
+					<h4>Suppression du JDK 1.8</h4>
+					<img src="img/jdk-1-8-remove.png" />
+				</section>
+				<section>
+					<h2>Récupération du projet (1/9)</h2>
+					<ul>
+						<li>Créer un compte par personne sur <a href="https://github.com">https://github.com</a> puis s'identifier</li>
+						<li>Passer cette étape si déjà inscrit</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Récupération du projet (2/9)</h2>
+					<ul>
+						<li>Faire un fork du projet par équipe depuis <a href="https://github.com/la-urre/Citadels">https://github.com/la-urre/Citadels</a></li>
+						<li>Ceci permettra de travailler sur un projet dédié par équipe</li>
+					</ul>
+					<img src="img/fork.png" />
+				</section>
+				<section>
+					<h2>Récupération du projet (3/9)</h2>
+					<h4>Ajouter les membres du groupe comme collaborateurs</h4>
+					<img src="img/add-collaborators.png" />
+				</section>
+				<section>
+					<h2>Récupération du projet (4/9)</h2>
+					<h4>Cloner le dépôt pour chaque collaborateur</h4>
+					<img src="img/home-checkout.png" />
+				</section>
+				<section>
+					<h2>Récupération du projet (5/9)</h2>
+					<h4>Cliquer sur "Log in to Github"</h4>
+					<img src="img/clone.png" />
+				</section>
+				<section>
+					<h2>Récupération du projet (6/9)</h2>
+					<h4>S'identifier sur Github puis cloner</h4>
+					<img src="img/login.png" />
+				</section>
+				<section>
+					<h2>Récupération du projet (7/9)</h2>
+					<h4>Ouvrir le projet</h4>
+					<img src="img/open-project.png" />
+				</section>
+				<section>
+					<h2>Récupération du projet (8/9)</h2>
+					<h4>Importer le projet en respectant ces paramètres</h4>
+					<img src="img/import-project-settings.png" />
+				</section>
+				<section>
+					<h2>Récupération du projet (9/9)</h2>
+					<h4>Lancer les tests unitaires pour vérifier que le projet est bien configuré</h4>
+					<img src="img/run-tests.png" />
+				</section>
+				<section>
+					<h3>Récupération du tableau de suivi (1/5)</h3>
+					<ul>
+						<li>Créer un compte par personne sur <a href="https://trello.com">https://trello.com</a> puis s'identifier</li>
+						<li>Passer cette étape si déjà inscrit</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Récupération du tableau de suivi (2/5)</h3>
+					<h4>Créer une équipe en cliquant sur + en haut à droite</h4>
+					<img src="img/trello-create-team-menu.png" />
+				</section>
+				<section>
+					<h3>Récupération du tableau de suivi (3/5)</h3>
+					<h4>Donner un nom à l'équipe</h4>
+					<img src="img/trello-create-team.png" />
+				</section>
+				<section>
+					<h3>Récupération du tableau de suivi (4/5)</h3>
+					<h4>Inviter les collaborateurs</h4>
+					<img src="img/trello-invite.png" />
+				</section>
+				<section>
+					<h3>Récupération du tableau de suivi (5/5)</h3>
+					<ul>
+						<li>Aller sur : <a href="https://trello.com/b/CPQvPtQ5/citadelles">https://trello.com/b/CPQvPtQ5/citadelles</a></li>
+						<li>Cliquer sur Afficher le menu > Plus > Copier le tableau</li>
+						<li>Sélectionner l'équipe et cliquer sur Créer</li>
+						<li>Tout le monde doit maintenant pouvoir voir et modifier le tableau</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Jouer</h2>
+					<h3>Exécuter le jeu (voir le fichier README.md à la racine du projet)</h3>
+				</section>
+				<section>
+					<h2>Faire vivre le tableau de suivi</h2>
+					<ul>
+						<li>Y remonter les bugs / idées d'améliorations et de nouvelles fonctionnalités</li>
+						<li>Utiliser la colonne "A faire"</li>
+						<li>Le programme des 3 premières itérations est prévu, à vous de planifier les 2 dernières</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				pdfSeparateFragments: false,
+				slideNumber: true,
+				hash: true,
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
