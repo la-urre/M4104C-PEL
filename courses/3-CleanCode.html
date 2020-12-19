@@ -6,13 +6,12 @@
 
 		<title>reveal.js</title>
 
-		<link rel="stylesheet" href="../css/reset.css">
-		<link rel="stylesheet" href="../css/reveal.css">
-		<link rel="stylesheet" href="../css/theme/beige.css">
-		<link rel="stylesheet" href="../css/custom.css">
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/beige.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../lib/css/monokai.css">
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -241,7 +240,7 @@ public class ProductShipphingDetails {
     private String m_city;
 }
 					</code></pre>
-					<h4>Les IDEs colorent déjà les membres d'une certaines façon</h4>
+					<h4>Les IDEs proposent une coloration spéciale pour les champs</h4>
 				</section>
 				<section>
 					<h2>Encodages</h2>
@@ -924,6 +923,7 @@ class PriceCalculator {
 					<ul>
 						<li>null est très souvent utilisé pour représenter l'absence d'une valeur</li>
 						<li>Très souvent on oublie à un endroit de vérifier si la valeur vaut null => NullPointerException</li>
+						<li>Null reference: the "Billion-Dollar Mistake"</li>
 					</ul>
 				</section>
 				<section>
@@ -972,22 +972,20 @@ public Optional&lt;String&gt; method(int parameter) {
 			</div>
 		</div>
 
-		<script src="../js/reveal.js"></script>
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
 
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
 			Reveal.initialize({
 				pdfSeparateFragments: false,
 				slideNumber: true,
 				hash: true,
-				dependencies: [
-					{ src: '../plugin/markdown/marked.js' },
-					{ src: '../plugin/markdown/markdown.js' },
-					{ src: '../plugin/notes/notes.js', async: true },
-					{ src: '../plugin/highlight/highlight.js', async: true }
-				]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
 			});
 		</script>
 	</body>
