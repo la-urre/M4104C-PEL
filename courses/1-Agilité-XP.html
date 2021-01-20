@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/beige.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Chap 5 : Agilité et eXtreme Programming</h2>
+
+					<div class="img-row">
+						<img src="../img/iut.jpg" />
+						<div>
+							<p style="font-size: 16px">M4104 - PEL : Agilité et bonnes pratiques de programmation</p>
+							<p style="font-size: 16px">Institut Universitaire de Technologie de Bayonne et du Pays Basque</p>
+							<p style="font-size: 16px">Robin Lucbernet - Christophe Marquesuzàa - Damien Urruty</p>
+							<p style="font-size: 16px">DUT Informatique 2020 / 2021 - Semestre 4</p>
+						</div>
+					</div>
+				</section><section>
+					<h2>Quel est le point commun entre</h2>
+					<div class="img-row">
+						<img src="../img/mars-climate-orbiter.jpg" />
+						<img src="../img/apple.jpg" />
+						<img src="../img/gandhi.jpg" />
+					</div>
+				</section>
+				<section>
+					<div class="horizontal">
+						<img class="left-img" src="../img/mars-climate-orbiter.jpg" />
+						<div>
+							<h2>Mars Climate Orbiter</h2>
+							<ul>
+								<li>Sonde écrasée sur Mars en 1999</li>
+								<li>Erreur causée par un problème d'unité (système métrique vs anglo-saxon)</li>
+								<li>Coût total : $327 millions</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="horizontal">
+						<img class="left-img" src="../img/apple.jpg" />
+						<div>
+							<h2>Apple "goto fail"</h2>
+							<img src="../img/goto-fail.jpg" />
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="horizontal">
+						<img class="left-img" src="../img/apple.jpg" />
+						<div>
+							<h2>Apple goto fail</h2>
+							<ul>
+								<li>Faille dans la validation de certificats HTTPS (iOS et OS X)</li>
+								<li>Double goto court-circuitant des validations</li>
+								<li>Des millions de machines vulnérables</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="horizontal">
+						<img class="left-img" src="../img/gandhi.jpg" />
+						<div>
+							<h2>Gandhi dans le jeu</h2>
+							<img src="../img/civilization.png" />
+							<ul>
+								<li>Censé être le personnage le plus pacifique du jeu</li>
+								<li>A cause d'un integer underflow devient le plus aggressif</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Bug, bug, bug...</h3>
+					<ul>
+						<li>Ce ne sont que 3 exemples parmi des millions (voir M2204 et M3301 pour d'autres cas)</li>
+						<li>Ajouter à cela les projets abandonnés, en retard ou au budget dépassé (voir CHAOS report)</li>
+						<li>Il y aura toujours des comportements non prévus et des bugs...</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Bon alors, on fait quoi ?</h3>
+					<img src="../img/dont-know.gif" />
+				</section>
+				<section>L'agilité</section>
+				<section>
+					<h2>Dans les années 1990, certaines méthodes sont créées pour alléger le développement logiciel</h2>
+				</section>
+				<section>
+					<h2>Quelques exemples de méthodes légères</h2>
+					<ul>
+						<li class="fragment">RAD (Rapid Application Development)</li>
+						<li class="fragment">UP (Unified Process)</li>
+						<li class="fragment">SCRUM</li>
+						<li class="fragment">eXtreme Programming</li>
+						<li class="fragment">...</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Manifeste agile</h2>
+					<ul>
+						<li class="fragment">En 2001, les créateurs de ces différentes méthodes organisent une rencontre</li>
+						<li class="fragment">17 développeurs se retrouvent ainsi dans une station de ski pour dégager un socle commun à ces méthodes</li>
+						<li class="fragment">C'est là que nait le manifeste agile</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Manifeste agile</h2>
+					<h3>Nous découvrons comment mieux développer des logiciels par la pratique et en aidant les autres à le faire. Ces expériences nous ont amenés à valoriser :</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: valeurs</h2>
+					<ul>
+						<li class="fragment"><strong>Les individus et leurs interactions</strong> plus que les processus et les outils,</li>
+						<li class="fragment"><strong>Des logiciels opérationnels</strong> plus qu’une documentation exhaustive,</li>
+						<li class="fragment"><strong>La collaboration avec les clients</strong> plus que la négociation contractuelle,</li>
+						<li class="fragment"><strong>L’adaptation au changement</strong> plus que le suivi d’un plan.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Manifeste agile</h2>
+					<h3>Nous reconnaissons la valeur des seconds éléments, mais privilégions les premiers.</h3>
+					<h3>Référence: https://agilemanifesto.org/</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>1 - Notre plus haute priorité est de satisfaire le client en livrant rapidement et régulièrement des fonctionnalités à grande valeur ajoutée.</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>2 - Accueillez positivement les changements de besoins, même tard dans le projet. Les processus Agiles exploitent le changement pour donner un avantage compétitif au client.</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>3 - Livrez fréquemment un logiciel opérationnel avec des cycles de quelques semaines à quelques mois et une préférence pour les plus courts.</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>4 - Les utilisateurs ou leurs représentants et les développeurs doivent travailler ensemble quotidiennement tout au long du projet.</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>5 - Réalisez les projets avec des personnes motivées. Fournissez-leur l’environnement et le soutien dont ils ont besoin et faites-leur confiance pour atteindre les objectifs fixés.</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>6 - La méthode la plus simple et la plus efficace pour transmettre de l’information à l'équipe de développement et à l’intérieur de celle-ci est le dialogue en face à face.</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>7 - Un logiciel opérationnel est la principale mesure d’avancement.</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>8 - Les processus Agiles encouragent un rythme de développement soutenable. Ensemble, les commanditaires, les développeurs et les utilisateurs devraient être capables de maintenir indéfiniment un rythme constant. </h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>9 - Une attention continue à l'excellence technique et à une bonne conception renforce l’Agilité.</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>10 - La simplicité – c’est-à-dire l’art de minimiser la quantité de travail inutile – est essentielle.</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>11 - Les meilleures architectures, spécifications et conceptions émergent d'équipes auto-organisées.</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile: principes</h2>
+					<h3>12 - À intervalles réguliers, l'équipe réfléchit aux moyens de devenir plus efficace, puis règle et modifie son comportement en conséquence.</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile</h2>
+					<h3>Ces valeurs et principes ont surtout trait à l'organisation et l'état d'esprit de l'équipe</h3>
+					<h3>Il y a peu de recommendations techniques</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile</h2>
+					<h3>Attention !</h3>
+				</section>
+				<section>
+					<h2>Manifeste agile - attention</h2>
+					<h3>Constamment s'adapter au changement aura de grandes conséquences sur le logiciel</h3>
+					<h3>Il faut des pratiques techniques appropriées pour conserver un niveau de qualité maximal</h3>
+				</section>
+				<section>eXtreme Programming</section>
+				<section>Origines</section>
+				<section>Valeurs</section>
+				<section>
+					<h2>Communication</h2>
+				</section>
+				<section>
+					<h2>Simplicité</h2>
+					<ul>
+						<li class="fragment">Favoriser le code le plus simple qui puisse marcher</li>
+						<li class="fragment">Eviter la complexité dans le code (over-engineering)</li>
+						<li class="fragment">Eviter la duplication</li>
+						<li class="fragment">Simplifier au max la communication dans l'équipe</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Feedback</h2>
+					<ul>
+						<li class="fragment">Etre constamment à l'écoute et réagir</li>
+						<li class="fragment">S'améliorer continuellement</li>
+						<li class="fragment">S'appuyer au maximum sur les boucles de feedback courtes</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Boucles de feedback</h2>
+					<img src="../img/feedback_loops.png" style="width: 50%; background-color: white;" />
+				</section>
+				<section>
+					<h2>Courage</h2>
+					<ul>
+						<li class="fragment">S'exprimer au sein de l'équipe</li>
+						<li class="fragment">Accepter nos limites</li>
+						<li class="fragment">Dire la vérité: transparence totale</li>
+						<li class="fragment">S'adapter au changement</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Respect</h2>
+				</section>
+				<section>
+					<h2>Principes</h2>
+					<ul>
+						<li class="fragment">Le client pilote le projet</li>
+						<li class="fragment">Livraison régulière et très fréquente</li>
+						<li class="fragment">Auto-organisation</li>
+						<li class="fragment">Tests automatiques pour toutes les fonctionnalités (tout code qui va en production doit être testé)</li>
+						<li class="fragment">Amélioration continue du code (refactoring)</li>
+						<li class="fragment">Apprentissage continu (pour soi et pour les autres, ex mentoring)</li>
+					</ul>
+				</section>
+				<section>Pratiques
+					<section>Co-localisation</section>
+					<section>Equipe complète</section>
+					<section>Environnement de travail informatif</section>
+					<section>Travail énergique</section>
+					<section>Revues de code
+						<section>Egoless programming (https://blog.codinghorror.com/the-ten-commandments-of-egoless-programming/) + https://fr.wikipedia.org/wiki/Effet_Dunning-Kruger</section>
+					</section>
+					<section>Pair/Mob programming</section>
+					<section>Histoires</section>
+					<section>Plannification</section>
+					<section>Cycles de travail</section>
+					<section>Slack</section>
+					<section>Temps de build court</section>
+					<section>Intégration continue</section>
+					<section>Approche Test-First</section>
+					<section>Conception incrémentale (+refactoring)</section>
+					<section>Implication du client</section>
+					<section>Déploiement incrémental</section>
+					<section>Déploiement continu</section>
+					<section>Continuité d'équipe</section>
+					<section>Réduction d'équipe</section>
+					<section>Analyse des causes racines</section>
+					<section>
+						Proprieté collective du code
+						Du code écrit par quelqu'un de l'équipe appartient à l'équipe
+						Il n'y a pas de chasse gardée
+					</section>
+					<section>Rythme soutenable</section>
+					<section>Documentation dans le code et les tests</section>
+					<section>Base de code unique centralisée</section>
+					<section>Négociation contractuelle</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				pdfSeparateFragments: false,
+				slideNumber: true,
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+			});
+		</script>
+	</body>
+</html>
