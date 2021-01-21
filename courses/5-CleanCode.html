@@ -359,9 +359,18 @@ public void display(int[][] grid) {
 					<h2>Nom de méthodes</h2>
 					<h4>Les accesseurs et mutateurs sont par convention prefixés set et get (is pour les booléens)</h4>
 					<ul>
-						<li>setName</li>
-						<li>getAge</li>
-						<li>isRegistered</li>
+						<li>setName(String name)</li>
+						<li>getAge()</li>
+						<li>isRegistered()</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Nom de méthodes</h2>
+					<h4>... mais cela devient pratique courante de ne plus utiliser get et set</h4>
+					<ul>
+						<li>name(String name)</li>
+						<li>age()</li>
+						<li>registered()</li>
 					</ul>
 				</section>
 				<section>
@@ -562,7 +571,7 @@ public void method(int parameter) {
 				<section>
 					<h2>Paramètre flag</h2>
 					<h4>Une méthode qui accepte des flags viole en général le SRP</h4>
-					<h4>On y trouvera certainement un if à l'intérieur</h4>
+					<h4>On y trouvera certainement un ou plusieurs if à l'intérieur</h4>
 				</section>
 				<section>
 					<h2>Séparation Command-Query</h2>
@@ -595,8 +604,8 @@ public String generateInvoice(Order order) {
 					<h4>Cette règle n'a plus lieu d'être</h4>
 					<pre><code data-noescape class="language-java">
 public MaritalStatus computeMaritalStatus(Person person) {
-    if (person.getWife() != null) {
-        return MaritalStatus.MARRIED;
+    if (person.getSpouse() != null) {
+		return person.getSpouse().isDead() ? MaritalStatus.WIDOW : MaritalStatus.MARRIED;
     }
     return MaritalStatus.SINGLE;
 }
@@ -622,7 +631,7 @@ public MaritalStatus computeMaritalStatus(Person person) {
 if ((employee.flags & HOURLY_FLAG) && (employee.age > 65))
 					</code></pre>
 					<pre><code data-noescape class="language-java">
-if (employee.isEligibleForFullBenefits())
+if (employee.hasBenefits(FULL))
 					</code></pre>
 				</section>
 				<section>
@@ -661,6 +670,7 @@ if (employee.isEligibleForFullBenefits())
 					<h2>Charge mentale</h2>
 					<h4>Organiser le code permet de réduire la charge mentale qui pèse sur le développeur</h4>
 					<h4>Du code mal organisé va forcer le développeur à réfléchir davantage et demander un effort de concentration et de mémoire</h4>
+					<h4>ex: le code à modifier se trouve dans une classe de 3000 lignes</h4>
 				</section>
 				<section>
 					<h2>Densité verticale</h2>
@@ -685,10 +695,10 @@ public class ReporterConfig {
 					<h2>Densité verticale</h2>
 					<pre><code data-noescape class="language-java">
 public class ReporterConfig {
-    private String m_className;
-    private List&lt;Property&gt; m_properties = new ArrayList&lt;Property&gt;();
+    private String listenerClassName;
+    private List&lt;Property&gt; listenerProperties = new ArrayList&lt;Property&gt;();
     public void addProperty(Property property) {
-        m_properties.add(property);
+        listenerProperties.add(property);
     }
 }
 					</code></pre>
