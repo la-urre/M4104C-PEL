@@ -197,26 +197,32 @@ assertThat(actualList).contains(value);
 				<section>
 					<h2>Given / When / Then</h2>
 					<pre><code data-noescape class="language-java">
+@Test
+void it_should_cost_74_for_one_beer() {
     // GIVEN
-    Order order = new Order(Pub.ONE_BEER, false, 1);
+    Pub pub = new Pub();
 
     // WHEN
-    int actualPrice = pub.computeCost(order);
+    int totalAmount = pub.printReceipt("hansa", false, 1);
 
     // THEN
-    assertThat(actualPrice).isEqualTo(74);
+    assertThat(totalAmount).isEqualTo(74);
+}
 					</code></pre>
 				</section>
 				<section>
 					<h2>Cas de test <span class="translation">(Test case)</span></h2>
 					<pre><code data-noescape class="language-java">
 @Test
-public void pay_74_for_a_beer() {
-    Order order = new Order(Pub.ONE_BEER, false, 1);
+void it_should_cost_74_for_one_beer() {
+    // ARRANGE
+    Pub pub = new Pub();
 
-    int actualPrice = pub.computeCost(order);
+    // ACT
+    int totalAmount = pub.printReceipt("hansa", false, 1);
 
-    assertThat(actualPrice).isEqualTo(74);
+    // ASSERT
+    assertThat(totalAmount).isEqualTo(74);
 }
 					</code></pre>
 				</section>
@@ -244,11 +250,28 @@ public void setUp() {
     // initialisations
 }
 
-@TearDown
+@AfterEach
 public void tearDown() {
     // nettoyages
 }
 					</code></pre>
+				</section>
+				<section>
+					<h2>Couverture de code</h2>
+				</section>
+				<section>
+					<h2>La couverture de code, c'est quoi ?</h2>
+					<ul>
+						<li>Mesure qui permet de voir la proportion de code de production exécutée par les tests</li>
+						<li>S'exprime en général en pourcentage</li>
+						<li>Permet de s'assurer qu'un morceau de code est couvert par les tests</li>
+						<li>Dans certains IDEs on peut voir la couverture pour chaque ligne de code</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Couverture de test</h2>
+					<h3>100% n'est pas un objectif</h3>
+					<h3>100% de couverture ne veut pas dire pas de bug</h3>
 				</section>
 				<section>
 					<h2>Tests unitaires et dépendances</h2>
@@ -322,23 +345,6 @@ public int printReceipt(String drink, boolean student, int amount) {
 				</section>
 				<section>
 					<h3>En réalité la distinction est rarement faite et on parle de "mocks" dans tous les cas</h3>
-				</section>
-				<section>
-					<h2>Couverture de code</h2>
-				</section>
-				<section>
-					<h2>La couverture de code, c'est quoi ?</h2>
-					<ul>
-						<li>Mesure qui permet de voir la proportion de code de production exécutée par les tests</li>
-						<li>S'exprime en général en pourcentage</li>
-						<li>Permet de s'assurer qu'un morceau de code est couvert par les tests</li>
-						<li>Dans certains IDEs on peut voir la couverture pour chaque ligne de code</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Couverture de test</h2>
-					<h3>100% n'est pas un objectif</h3>
-					<h3>100% de couverture ne veut pas dire pas de bug</h3>
 				</section>
 				<section>
 					<h2>Automatisation des tests</h2>
