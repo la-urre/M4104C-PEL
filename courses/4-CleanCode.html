@@ -232,7 +232,7 @@ public class ProductShippingDetails {
 				</section>
 				<section>
 					<h2>Encodages</h2>
-					<h4>Supprimer des contraintes de nommages qui polluent le code</h4>
+					<h4>Supprimer des contraintes de nommage qui polluent le code</h4>
 					<h4>Ex : préfixe de membre</h4>
 					<pre><code data-noescape class="language-java">
 public class ProductShipphingDetails {
@@ -241,11 +241,11 @@ public class ProductShipphingDetails {
     private String m_city;
 }
 					</code></pre>
-					<h4>Les IDEs proposent une coloration spéciale pour les champs</h4>
+					<h4>Les éditeurs proposent une coloration spéciale pour les champs</h4>
 				</section>
 				<section>
 					<h2>Encodages</h2>
-					<h4>Supprimer des contraintes de nommages qui polluent le code</h4>
+					<h4>Supprimer des contraintes de nommage qui polluent le code</h4>
 					<h4>Ex : notation hongroise</h4>
 					<pre><code data-noescape class="language-java">
 public class ProductShipphingDetails {
@@ -257,7 +257,7 @@ public class ProductShipphingDetails {
 				</section>
 				<section>
 					<h2>Encodages</h2>
-					<h4>Supprimer des contraintes de nommages qui polluent le code</h4>
+					<h4>Supprimer des contraintes de nommage qui polluent le code</h4>
 					<h4>Ex : interfaces et implémentations</h4>
 					<pre><code data-noescape class="language-java">
 public interface IOrderPrinter {
@@ -272,7 +272,7 @@ public class OrderPrinterImpl implements IOrderPrinter {
 				</section>
 				<section>
 					<h2>Encodages</h2>
-					<h4>Supprimer des contraintes de nommages qui polluent le code</h4>
+					<h4>Supprimer des contraintes de nommage qui polluent le code</h4>
 					<h4>Ex : interfaces et implémentations</h4>
 					<pre><code data-noescape class="language-java">
 public interface OrderPrinter {
@@ -571,7 +571,7 @@ public void method(int parameter) {
 				</section>
 				<section>
 					<h2>Paramètre flag</h2>
-					<h4>Une méthode qui accepte des flags viole en général le SRP</h4>
+					<h4>Une méthode qui accepte des flags viole en général le SRP (voir section SOLID plus loin)</h4>
 					<h4>On y trouvera certainement un ou plusieurs if à l'intérieur</h4>
 				</section>
 				<section>
@@ -597,7 +597,7 @@ public String generateInvoice(Order order) {
 				<section>
 					<h2>Règle de l'unique sortie</h2>
 					<h4>Cette règle a du sens quand les méthodes sont très longues (centaines de lignes)</h4>
-					<h4>Dans ce cas plusieurs returns rendraient la compréhension du code plus difficile</h4>
+					<h4>Dans ce cas plusieurs return rendraient la compréhension du code plus difficile</h4>
 				</section>
 				<section>
 					<h2>Règle de l'unique sortie</h2>
@@ -671,7 +671,7 @@ if (employee.hasBenefits(FULL))
 					<h2>Charge mentale</h2>
 					<h4>Organiser le code permet de réduire la charge mentale qui pèse sur le développeur</h4>
 					<h4>Du code mal organisé va forcer le développeur à réfléchir davantage et demander un effort de concentration et de mémoire</h4>
-					<h4>ex: le code à modifier se trouve dans une classe de 3000 lignes</h4>
+					<h4>ex : le code à modifier se trouve dans une classe de 3000 lignes</h4>
 				</section>
 				<section>
 					<h2>Densité verticale</h2>
@@ -690,7 +690,7 @@ public class ReporterConfig {
     }
 }
 					</code></pre>
-					<h4>La classe fait très "chargée" et les commentaires n'amènent rien</h4>
+					<h4>La classe est trop "chargée" et les commentaires n'amènent rien</h4>
 				</section>
 				<section>
 					<h2>Densité verticale</h2>
@@ -703,7 +703,7 @@ public class ReporterConfig {
     }
 }
 					</code></pre>
-					<h4>Le code fait moins lourd et se lit plus facilement</h4>
+					<h4>Le code est moins lourd et se lit plus facilement</h4>
 				</section>
 				<section>
 					<h2>Distance verticale</h2>
@@ -738,7 +738,7 @@ public class ReporterConfig {
 				<section>
 					<h2>Defensive programming</h2>
 					<h4>On a tendance à vouloir se prémunir de beaucoup de cas d'erreurs dans le code</h4>
-					<h4>Une valeur nulle ou invalide, une entrée de l'utilisateur, etc</h4>
+					<h4>Une valeur nulle ou invalide, une entrée de l'utilisateur, etc.</h4>
 					<h4>Souvent ces vérifications se trouvent un peu partout dans le logiciel</h4>
 				</section>
 				<section>
@@ -749,15 +749,15 @@ public class ReporterConfig {
 				</section>
 				<section>
 					<h2>Bannir les codes d'erreur</h2>
-					<h4>Du temps de C, il fallait utiliser des codes d'erreurs en retour de fonctions pour signaler une erreur</h4>
-					<h4>Avec l'orienté-objet et surtout le mécanisme d'exceptions, on recommande de se passer des codes d'erreurs</h4>
+					<h4>Du temps de C, il fallait utiliser des codes d'erreur en retour de fonctions pour signaler une erreur</h4>
+					<h4>Avec l'orienté-objet et surtout le mécanisme d'exceptions, on recommande de se passer des codes d'erreur</h4>
 				</section>
 				<section>
 					<h2>Exceptions "checked" vs "unchecked"</h2>
 					<ul>
-						<li>En Java il existe deux types d'exception, les checked (qui héritent d'Exception) et les unchecked (qui héritent de RuntimeException)</li>
-						<li>Les exceptions checked font partie de l'API d'une méthode. Si une méthode jette une exception checked, elle doit la signaler dans sa signature</li>
-						<li>Il faut aussi que l'appelant attrape l'exception, ou la propage dans sa propre signature</li>
+						<li>En Java il existe deux types d'exception, les "checked" (qui héritent d'Exception) et les "unchecked" (qui héritent de RuntimeException)</li>
+						<li>Les exceptions "checked" font partie de l'API d'une méthode. Si une méthode jette une exception "checked", elle doit la signaler dans sa signature</li>
+						<li>Il faut aussi que l'appelant attrape l'exception ou la propage dans sa propre signature</li>
 					</ul>
 				</section>
 				<section>
@@ -785,26 +785,26 @@ catch (HttpException e) {
 					<h4>Ces 4 règles sont énoncées par ordre de priorité</h4>
 				</section>
 				<section>
-					<h2>Tous les tests passent</h2>
+					<h2>1. Tous les tests passent</h2>
 					<blockquote>"Tests are first class citizens."<footer>- Uncle Bob</footer></blockquote>
 				</section>
 				<section>
-					<h2>Pas de duplication</h2>
+					<h2>2. Pas de duplication</h2>
 					<h4>DRY : Don't Repeat Yourself</h4>
 					<h4>Il ne doit pas y avoir de logique dupliquée</h4>
 				</section>
 				<section>
-					<h2>Exprime l'intention</h2>
+					<h2>3. Exprimer l'intention</h2>
 					<h4>Le développeur doit rendre le code clair et précis</h4>
 					<h4>Le code doit utiliser des termes venant du jargon métier concerné</h4>
 				</section>
 				<section>
-					<h2>A le plus petit nombre de classes et de méthodes</h2>
+					<h2>4. Avoir le plus petit nombre de classes et de méthodes</h2>
 					<ul>
 						<li>Le code est concis</li>
 						<li>Il respecte KISS : Keep It Simple Stupid</li>
 						<li>Il respecte YAGNI : You Aren't Gonna Need It</li>
-						<li>Il ne tombe pas dans l'over-egineering, c'est-à-dire dans une solution compliquée techniquement sans raison</li>
+						<li>Il ne tombe pas dans l'over-engineering, c'est-à-dire dans une solution compliquée techniquement sans raison</li>
 					</ul>
 				</section>
 				<section>
